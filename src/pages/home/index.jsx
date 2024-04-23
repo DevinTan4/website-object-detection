@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 const HomePage = () => {
   const [motorbikeCount, setMotorbikeCount] = useState(0);
+  const [carCount, setCarCount] = useState(0);
 
   useEffect(() => {
     const fetchMotorbikeCount = async () => {
@@ -19,6 +20,24 @@ const HomePage = () => {
     fetchMotorbikeCount();
 
     const intervalId = setInterval(fetchMotorbikeCount, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    const fetchCarCount = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/api/car");
+        const data = await response.json();
+        setCarCount(data.car_count);
+      } catch (error) {
+        console.error("Error fetching car count: ", error);
+      }
+    };
+
+    fetchCarCount();
+
+    const intervalId = setInterval(fetchCarCount, 5000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -47,7 +66,7 @@ const HomePage = () => {
           </div>
           {/* Mobil */}
           <div className="flex flex-col items-center">
-            <p className="font-medium text-2xl">0/035</p>
+            <p className="font-medium text-2xl">{carCount}/035</p>
             <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Mobil</h2>
           </div>
         </div>
