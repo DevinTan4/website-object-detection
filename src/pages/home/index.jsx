@@ -43,46 +43,58 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col">
+    <div className="lg:overflow-x-hidden">
       {/* Header */}
       <header>
         {/* Navbar */}
         <nav className="fixed top-0 left-0 right-0">
-          <div className="w-full h-[100px] flex justify-center items-center bg-[#f0f1f1]">
+          <div className="w-full h-[100px] flex justify-center items-center bg-[#f0f1f1] shadow-xl">
             <img src={praditaLogoImg} alt="PraditaLogo" className="w-[150px]" />
           </div>
         </nav>
       </header>
 
       {/* Main */}
-      <main className="mt-[100px] py-[35px] flex flex-col items-center gap-8">
+      <main className="mt-[100px] py-[35px] flex flex-col items-center gap-8 lg:flex-row lg:py-20 lg:justify-evenly">
         {/* Gedung 1 */}
-        <div className="w-[347px] h-[320px] bg-[#F04524] rounded-2xl shadow-2xl shadow-[#F8BA18] py-[32px] px-[63px] flex flex-col items-center gap-8">
-          <h1 className="font-bold text-5xl">Gedung 1</h1>
+        <div className="w-[347px] h-[320px] bg-[#F04524] rounded-2xl shadow-2xl shadow-[#F8BA18] py-8 px-[63px] flex flex-col items-center gap-8 lg:w-[450px] lg:py-6">
+          <h1 className="font-bold text-5xl lg:text-[54px]">Gedung 1</h1>
           {/* Motor */}
           <div className="flex flex-col items-center">
-            <p className="font-medium text-2xl">{motorbikeCount}/128</p>
-            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Motor</h2>
+            <p className="font-medium text-2xl lg:text-[30px]">
+              {motorbikeCount}/128
+            </p>
+            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2 lg:text-[40px] lg:m-0">
+              Motor
+            </h2>
           </div>
           {/* Mobil */}
           <div className="flex flex-col items-center">
-            <p className="font-medium text-2xl">{carCount}/035</p>
-            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Mobil</h2>
+            <p className="font-medium text-2xl lg:text-[30px]">
+              {carCount}/035
+            </p>
+            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2 lg:text-[40px] lg:m-0">
+              Mobil
+            </h2>
           </div>
         </div>
 
         {/* Gedung 2 */}
-        <div className="w-[347px] h-[320px] bg-[#F04524] rounded-2xl shadow-2xl shadow-[#F8BA18] py-[32px] px-[63px] flex flex-col items-center gap-8">
-          <h1 className="font-bold text-5xl">Gedung 2</h1>
+        <div className="w-[347px] h-[320px] bg-[#F04524] rounded-2xl shadow-2xl shadow-[#F8BA18] py-8 px-[63px] flex flex-col items-center gap-8 lg:w-[450px] lg:py-6">
+          <h1 className="font-bold text-5xl lg:text-[54px]">Gedung 2</h1>
           {/* Motor */}
           <div className="flex flex-col items-center">
-            <p className="font-medium text-2xl">000/217</p>
-            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Motor</h2>
+            <p className="font-medium text-2xl lg:text-[30px]">000/217</p>
+            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2 lg:text-[40px] lg:m-0">
+              Motor
+            </h2>
           </div>
           {/* Mobil */}
           <div className="flex flex-col items-center">
-            <p className="font-medium text-2xl">000/060</p>
-            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Mobil</h2>
+            <p className="font-medium text-2xl lg:text-[30px]">000/060</p>
+            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2 lg:text-[40px] lg:m-0">
+              Mobil
+            </h2>
           </div>
         </div>
       </main>
