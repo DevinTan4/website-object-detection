@@ -24,7 +24,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="flex flex-col">
       {/* Header */}
       <header>
         {/* Navbar */}
@@ -36,38 +36,34 @@ const HomePage = () => {
       </header>
 
       {/* Main */}
-      <main className="mt-[100px] h-main-height">
+      <main className="mt-[100px] py-[35px] flex flex-col items-center gap-8">
         {/* Gedung 1 */}
-        <div className="h-half-main-height flex flex-col items-center gap-5 py-2 justify-center">
-          {/* Title */}
-          <div className="text-5xl font-bold text-[#ec1c24]">Gedung 1</div>
-          {/* Counter motor */}
+        <div className="w-[347px] h-[320px] bg-[#F04524] rounded-2xl shadow-2xl shadow-[#F8BA18] py-[32px] px-[63px] flex flex-col items-center gap-8">
+          <h1 className="font-bold text-5xl">Gedung 1</h1>
+          {/* Motor */}
           <div className="flex flex-col items-center">
-            <p id="motorbike-counter" className="text-2xl font-medium">
-              {motorbikeCount}/128
-            </p>
-            <h2 className="font-bold text-4xl">Motor</h2>
+            <p className="font-medium text-2xl">{motorbikeCount}/128</p>
+            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Motor</h2>
           </div>
-          {/* Counter mobil */}
+          {/* Mobil */}
           <div className="flex flex-col items-center">
-            <p className="text-2xl font-medium">000/35</p>
-            <h2 className="font-bold text-4xl">Mobil</h2>
+            <p className="font-medium text-2xl">0/035</p>
+            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Mobil</h2>
           </div>
         </div>
 
         {/* Gedung 2 */}
-        <div className="h-half-main-height flex flex-col items-center gap-5 py-2 justify-center">
-          {/* Title */}
-          <div className="text-5xl font-bold">Gedung 2</div>
-          {/* Counter motor */}
+        <div className="w-[347px] h-[320px] bg-[#F04524] rounded-2xl shadow-2xl shadow-[#F8BA18] py-[32px] px-[63px] flex flex-col items-center gap-8">
+          <h1 className="font-bold text-5xl">Gedung 2</h1>
+          {/* Motor */}
           <div className="flex flex-col items-center">
-            <p className="text-2xl font-medium">000/217</p>
-            <h2 className="font-bold text-4xl">Motor</h2>
+            <p className="font-medium text-2xl">000/217</p>
+            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Motor</h2>
           </div>
-          {/* Counter mobil */}
+          {/* Mobil */}
           <div className="flex flex-col items-center">
-            <p className="text-2xl font-medium">000/60</p>
-            <h2 className="font-bold text-4xl">Mobil</h2>
+            <p className="font-medium text-2xl">000/060</p>
+            <h2 className="font-bold text-4xl text-[#F8BA18] -mt-2">Mobil</h2>
           </div>
         </div>
       </main>

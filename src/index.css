@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-[#f16e21] h-screen text-white;
+    @apply bg-[#f16e21] h-dvh text-white;
   }
 }
