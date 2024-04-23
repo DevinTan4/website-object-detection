@@ -1,6 +1,28 @@
+import { useState } from "react";
 import { praditaLogoImg } from "../../assets/images";
+import { useEffect } from "react";
 
 const HomePage = () => {
+  const [motorbikeCount, setMotorbikeCount] = useState(0);
+
+  useEffect(() => {
+    const fetchMotorbikeCount = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/api/motorbike");
+        const data = await response.json();
+        setMotorbikeCount(data.motorbike_count);
+      } catch (error) {
+        console.error("Error fetching motorbike count: ", error);
+      }
+    };
+
+    fetchMotorbikeCount();
+
+    const intervalId = setInterval(fetchMotorbikeCount, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="h-screen flex flex-col">
       {/* Header */}
@@ -21,7 +43,9 @@ const HomePage = () => {
           <div className="text-5xl font-bold text-[#ec1c24]">Gedung 1</div>
           {/* Counter motor */}
           <div className="flex flex-col items-center">
-            <p className="text-2xl font-medium">000/128</p>
+            <p id="motorbike-counter" className="text-2xl font-medium">
+              {motorbikeCount}/128
+            </p>
             <h2 className="font-bold text-4xl">Motor</h2>
           </div>
           {/* Counter mobil */}
